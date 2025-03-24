@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任文浩的个人主页</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- 添加字体图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles/background.css">
+    <!-- 在head标签内添加CSS引用 -->
+    <link rel="stylesheet" href="styles/animation-background.css">
+    
+    <!-- 在body标签结束前添加JavaScript引用 -->
+    <script src="js/background-animation.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <div class="logo">
+                <span class="logo-text">Haozi</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">主页 | Home</a></li>
+                    <li><a href="https://www.xiaohongshu.com/user/profile/61a64f71000000001000fbcc" target="_blank">小红书 | Red</a></li>
+                    <li><a href="photos.html">摄影 | Photographs</a></li>
+                    <li><a href="agents.html" class="agent-link">我的智能体 | Agent <i class="fas fa-robot"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <h1>Hello!</h1>
+                    <h2>我是任文浩</h2>
+                    <div class="intro-text">
+                        一名热爱生活的AI训练师，社恐ENFJ，能独立喝水吃饭，无聊会玩智能手机和电脑，热爱摄影。
+                    </div>
+                    <p class="intro-text-en">
+                        I'm an AI trainer who loves life. I'm an ENFJ with a bit of social anxiety. I'm passionate about photography.
+                    </p>
+                    <a href="resume.html">
+                        <button class="download-btn">RESUME <i class="fas fa-download"></i></button>
+                    </a>
+                </div>
+                <div class="avatar-content">
+                    <img 
+                        src="images/111.png" 
+                        alt="个人卡通形象" 
+                        class="avatar-image"
+                        onerror="console.error('图片加载失败:', this.src);"
+                    >
+                    <div class="avatar-decoration"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

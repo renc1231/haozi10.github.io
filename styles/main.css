@@ -1,0 +1,521 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.page-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 头部样式 - 更简洁高级 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    margin-bottom: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    animation: fadeInRight 0.8s ease-out;
+}
+
+/* 添加logo链接样式 */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.logo-link:hover {
+    color: inherit;
+}
+
+.logo-text {
+    font-family: 'Arial', sans-serif;
+    color: #1e3799;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.logo-text:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 2px 10px rgba(30, 55, 153, 0.2);
+}
+
+/* 移除圆形图标样式 */
+.logo::before {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    animation: fadeInUp 0.8s ease-out 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+nav a:hover {
+    color: #1e3799;
+    background-color: rgba(30, 55, 153, 0.08);
+    transform: translateY(-2px);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #1e3799;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+nav a:hover::after {
+    width: 70%;
+    opacity: 1;
+}
+
+nav ul li {
+    opacity: 0;
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+nav ul li:nth-child(1) { animation-delay: 0.2s; }
+nav ul li:nth-child(2) { animation-delay: 0.3s; }
+nav ul li:nth-child(3) { animation-delay: 0.4s; }
+
+/* 主要内容区域 */
+.content-wrapper {
+    padding: 0;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    padding: 20px 0;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.avatar-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.avatar-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 700px;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12));
+    animation: fadeInRight 1s ease-out 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    border-radius: 30px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+}
+
+.avatar-content::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(135deg, rgba(30, 55, 153, 0.15), rgba(30, 55, 153, 0.03));
+    border-radius: 30px;
+    z-index: -1;
+    transform: rotate(-3deg);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(5px);
+}
+
+.avatar-content:hover .avatar-image {
+    transform: translateY(-12px) scale(1.03);
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.18));
+}
+
+.avatar-content:hover::before {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+.text-content h1 {
+    font-size: 68px;
+    margin-bottom: 15px;
+    color: #1e3799;
+    animation: fadeInUp 0.8s ease-out;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.text-content h2 {
+    font-size: 58px;
+    margin-bottom: 40px;
+    color: #1e3799;
+    white-space: nowrap;
+    animation: fadeInUp 0.8s ease-out 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.intro-text {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+    max-width: 800px;
+    line-height: 1.4;
+    animation: fadeInUp 0.8s ease-out 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.intro-text-en {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 800px;
+    line-height: 1.4;
+    animation: fadeInUp 0.8s ease-out 0.6s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.download-btn {
+    background-color: #1e3799;
+    color: white;
+    padding: 16px 42px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 17px;
+    margin-bottom: 50px;
+    animation: fadeInUp 0.8s ease-out 0.8s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.4s ease;
+    box-shadow: 0 6px 15px rgba(30, 55, 153, 0.2);
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+
+.download-btn:hover {
+    background-color: #152c7c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 55, 153, 0.4);
+}
+
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+.download-btn:hover::before {
+    left: 100%;
+}
+
+.download-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.download-btn:hover i {
+    transform: translateY(-2px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 0 20px;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .text-content h1 {
+        font-size: 48px;
+    }
+
+    .text-content h2 {
+        font-size: 42px;
+    }
+
+    .intro-text {
+        font-size: 20px;
+    }
+
+    .intro-text-en {
+        font-size: 18px;
+    }
+
+    .avatar-container {
+        position: static;
+        transform: none;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 120px; /* 在移动端稍微缩小尺寸 */
+        height: 120px;
+    }
+}
+
+@media (max-width: 968px) {
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .avatar-content {
+        order: -1;  /* 在移动端将图片放在上方 */
+    }
+
+    .avatar-image {
+        max-height: 500px;  /* 移动端稍微调整大小 */
+    }
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-height: 500px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* 添加玻璃拟态效果的通用类 */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+/* 添加动画关键帧 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 为文本内容添加动画 */
+.text-content h1 {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.text-content h2 {
+    animation: fadeInUp 0.8s ease-out 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.intro-text {
+    animation: fadeInUp 0.8s ease-out 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.intro-text-en {
+    animation: fadeInUp 0.8s ease-out 0.6s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.download-btn {
+    animation: fadeInUp 0.8s ease-out 0.8s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* 为头像添加动画 */
+.avatar-image {
+    animation: fadeInRight 1s ease-out 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* 为导航栏添加动画 */
+.logo {
+    animation: fadeInRight 0.8s ease-out;
+}
+
+nav ul li {
+    opacity: 0;
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+nav ul li:nth-child(1) { animation-delay: 0.2s; }
+nav ul li:nth-child(2) { animation-delay: 0.3s; }
+nav ul li:nth-child(3) { animation-delay: 0.4s; }
+
+/* 添加按钮悬停效果 */
+.download-btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 55, 153, 0.3);
+}
+
+/* 添加社交图标悬停效果 */
+.social-links a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+.avatar-container {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    transition: all 0.3s ease; /* 添加过渡效果 */
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid #fff;
+    transition: all 0.3s ease;
+    cursor: pointer; /* 添加鼠标指针样式 */
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 增强悬停时的阴影效果 */
+    border-color: #1e3799; /* 悬停时改变边框颜色 */
+}
+
+/* Agent链接高亮样式 */
+.agent-link {
+    background-color: #1e3799;
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 30px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    height: 38px;
+    box-shadow: 0 4px 12px rgba(30, 55, 153, 0.25);
+}
+
+.agent-link:hover {
+    background-color: #152c7c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(30, 55, 153, 0.3);
+    color: white !important;
+}
+
+.agent-link i {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+/* 为Agent链接添加动画 */
+nav ul li:nth-child(4) { 
+    animation-delay: 0.5s; 
+}
+
+/* 确保导航栏项目垂直对齐 */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    animation: fadeInUp 0.8s ease-out 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    align-items: center;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
