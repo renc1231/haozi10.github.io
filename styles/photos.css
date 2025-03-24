@@ -1,0 +1,263 @@
+/* 摄影页面样式 */
+body {
+    background-color: #000;
+    color: #1e3a8a;
+}
+
+.photo-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.photo-header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.photo-header h1 {
+    font-size: 2.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #1e3a8a;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.photo-header h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #1e3a8a;
+}
+
+.photo-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.photo-category {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.photo-category:hover {
+    transform: translateY(-10px);
+}
+
+.category-images {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.category-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-category:hover .category-images img {
+    transform: scale(1.05);
+}
+.category-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 25px;
+    background-color: #1e3a8a; /* 蓝色背景 */
+    color: #ffffff; /* 白色文字 */
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s;
+    border-radius: 0 0 8px 8px;
+    cursor: pointer; /* 添加指针样式提示可点击 */
+    position: relative; /* 为提示文字定位 */
+}
+/* 修复重复的category-link定义 */
+.category-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 25px;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s;
+    border-radius: 0 0 8px 8px;
+    cursor: pointer;
+    position: relative;
+}
+.category-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 25px;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s;
+    border-radius: 0 0 8px 8px;
+    cursor: pointer; /* 添加指针样式提示可点击 */
+    position: relative; /* 为提示文字定位 */
+}
+
+/* 添加双击提示 */
+.category-link:after {
+    content: "双击返回主页";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: #1e3a8a;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.category-link:hover:after {
+    opacity: 1;
+}
+.category-link i {
+    margin-right: 12px;
+    font-size: 1.1rem;
+    color: #ffffff; /* 确保图标也是白色 */
+}
+.category-link:hover {
+    background-color: #2a4db3; /* 悬停时使用稍亮的蓝色 */
+    color: #ffffff; /* 保持文字为白色 */
+}
+
+/* 修复重复的悬停样式，保留正确的样式 */
+.category-link:hover {
+    background-color: #2a4db3;
+    color: #ffffff;
+}
+
+/* 删除错误的悬停样式 */
+/* .category-link:hover {
+    background-color: rgba(30, 58, 138, 0.1);
+} */
+
+/* 照片部分样式 */
+.photo-section {
+    margin-bottom: 70px;
+}
+.photo-section h2 {
+    color: #1e3a8a;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+.photo-section h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: #1e3a8a;
+}
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+.photo-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+.photo-item:hover {
+    transform: translateY(-5px);
+}
+.photo-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+.photo-item p {
+    color: #ffffff; /* 修改为白色文字 */
+    padding: 15px;
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #1e3a8a; /* 修改为蓝色背景 */
+}
+.back-to-home {
+    text-align: center;
+    margin: 60px 0 40px;
+}
+.back-btn {
+    background-color: #1e3a8a; /* 修改为蓝色背景 */
+    color: #ffffff; /* 修改为白色文字 */
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+}
+.back-btn i {
+    margin-left: 10px;
+    color: #ffffff; /* 确保图标也是白色 */
+}
+.back-btn:hover {
+    background-color: #2a4db3; /* 悬停时使用稍亮的蓝色 */
+    color: #fff;
+}
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .photo-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* 修复媒体查询语法错误 */
+@media (max-width: 768px) {
+    .photo-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .photo-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-images {
+        height: 240px;
+    }
+    
+    .photo-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .photo-item img {
+        height: 180px;
+    }
+}

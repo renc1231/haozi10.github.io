@@ -1,0 +1,283 @@
+/* 智能体页面样式 */
+
+/* 主容器样式 */
+.agents-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 页面标题样式 */
+.agents-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.agents-header h1 {
+    font-size: 4rem;
+    color: #1e3799;
+    font-weight: 600;
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.agents-header h1:after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 2px;
+    background-color: #1e3799;
+}
+
+.agents-header p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* 智能体网格布局 - 竖向排列 */
+.agents-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 智能体卡片样式 - 竖向排列 */
+.agent-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 30px;
+    width: 100%;
+}
+
+.agent-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* 智能体图标样式 */
+.agent-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(30, 55, 153, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.agent-card:hover .agent-icon {
+    background-color: #1e3799;
+    transform: scale(1.05);
+}
+
+.agent-icon i {
+    font-size: 28px;
+    color: #1e3799;
+    transition: all 0.3s ease;
+}
+
+.agent-card:hover .agent-icon i {
+    color: white;
+}
+
+/* 智能体信息样式 */
+.agent-info {
+    flex: 1;
+    margin-bottom: 25px;
+}
+
+.agent-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.agent-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* 功能标签样式 */
+.agent-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.feature-tag {
+    background-color: rgba(30, 55, 153, 0.08);
+    color: #1e3799;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.agent-card:hover .feature-tag {
+    background-color: rgba(30, 55, 153, 0.15);
+}
+
+/* 使用按钮样式 */
+.use-agent-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #1e3799;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.use-agent-btn:hover {
+    background-color: #152a70;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 55, 153, 0.3);
+}
+
+.use-agent-btn i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.use-agent-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* 页脚样式 */
+.agents-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.agents-footer p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contact-for-agent {
+    margin-top: 20px;
+}
+
+.contact-for-agent p {
+    font-size: 0.95rem;
+    color: #777;
+}
+
+.contact-for-agent a {
+    color: #1e3799;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-for-agent a:hover {
+    text-decoration: underline;
+}
+
+/* 活动链接样式 */
+.agent-link.active {
+    color: #1e3799;
+    background-color: rgba(30, 55, 153, 0.08);
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .agents-grid {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .agents-grid {
+        max-width: 600px;
+    }
+    
+    .agents-header h1 {
+        font-size: 3rem;
+        letter-spacing: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .agents-grid {
+        max-width: 100%;
+    }
+    
+    .agent-card {
+        padding: 25px;
+    }
+    
+    .agents-header h1 {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+}
+
+/* 返回主页按钮样式 */
+.back-to-home {
+    margin-top: 25px;
+}
+
+.back-home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #1e3799;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.back-home-btn:hover {
+    background-color: #152a70;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 55, 153, 0.3);
+}
+
+.back-home-btn i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.back-home-btn:hover i {
+    transform: translateX(-3px);
+}
