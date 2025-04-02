@@ -716,8 +716,8 @@
                 if (wheelThrottle) return;
                 wheelThrottle = true;
                 
-                // 防止默认滚动行为
-                e.preventDefault();
+                // 注意：在静态网站中，我们不阻止默认滚动行为，以确保页面可以正常滚动
+                // e.preventDefault();
                 
                 if (e.deltaY > 0) {
                     if (currentIndex < photoItems.length - 1) {
@@ -732,7 +732,7 @@
                 setTimeout(() => {
                     wheelThrottle = false;
                 }, 1000);
-            }, {passive: false}); // 注意这里改为passive: false以允许preventDefault
+            }, {passive: true}); // 改为passive: true以提高滚动性能
             
             // 添加滑动手势支持
             let startX, startY, endX, endY;
