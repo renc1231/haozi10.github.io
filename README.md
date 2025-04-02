@@ -1,3 +1,5 @@
+
+<img src="https://pic1.zhimg.com/v2-746a29b9cca542517ec0516b2075e992_1440w.jpg" />
 # 任文浩的个人网站
 
 这是一个使用HTML、CSS和JavaScript构建的个人网站项目，展示个人简历、摄影作品和智能体项目。
