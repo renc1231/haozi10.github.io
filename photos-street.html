@@ -224,7 +224,7 @@
         <!-- 照片项 8 -->
         <div class="fullscreen-photo-item">
             <div class="fullscreen-photo-wrapper">
-                <img src="images/photos/street/d10937107cf95bd0ceb663c320850aa.jpg" alt="自然环境人像">
+                <img src="E:\101MY ALL\AI Trainer\personal website\images\photos\street\d10937107cf95bd0ceb663c320850aa.jpg" alt="自然环境人像">
             </div>
             <div class="photo-description">
                 <h2 class="photo-title">树影下的建筑一隅</h2>
@@ -253,7 +253,7 @@
         <!-- 照片项 9 -->
         <div class="fullscreen-photo-item">
             <div class="fullscreen-photo-wrapper">
-                <img src="images/photos/street/da7c43388f7705742b38e1cfa6f9f7b.jpg" alt="创意人像">
+                <img src="E:\101MY ALL\AI Trainer\personal website\images\photos\street\da7c43388f7705742b38e1cfa6f9f7b.jpg" alt="创意人像">
             </div>
             <div class="photo-description">
                 <h2 class="photo-title">暮河游影</h2>
@@ -282,7 +282,7 @@
         <!-- 照片项 10 -->
         <div class="fullscreen-photo-item">
             <div class="fullscreen-photo-wrapper">
-                <img src="images/photos/ed65ad680c6325a83ad7d198e620a73.jpg" alt="多重曝光人像">
+                <img src="E:\101MY ALL\AI Trainer\personal website\images\photos\ed65ad680c6325a83ad7d198e620a73.jpg" alt="多重曝光人像">
             </div>
             <div class="photo-description">
                 <h2 class="photo-title">路灯下的梦幻树影</h2>
@@ -655,3 +655,125 @@
                     if (currentIndex < photoItems.length - 1) {
                         updateActivePhoto(currentIndex + 1);
                     }
+                }
+            });
+            
+            // 鼠标滚轮导航
+            let wheelThrottle = false;
+            document.addEventListener('wheel', function(e) {
+                if (wheelThrottle) return;
+                wheelThrottle = true;
+                
+                if (e.deltaY > 0) {
+                    if (currentIndex < photoItems.length - 1) {
+                        updateActivePhoto(currentIndex + 1);
+                    }
+                } else {
+                    if (currentIndex > 0) {
+                        updateActivePhoto(currentIndex - 1);
+                    }
+                }
+                
+                setTimeout(() => {
+                    wheelThrottle = false;
+                }, 1000);
+            }, {passive: true});
+            
+            // 触摸滑动支持
+            let touchStartY = 0;
+            let touchThrottle = false;
+            
+            document.addEventListener('touchstart', function(e) {
+                touchStartY = e.touches[0].clientY;
+            }, {passive: true});
+            
+            document.addEventListener('touchend', function(e) {
+                if (touchThrottle) return;
+                touchThrottle = true;
+                
+                const touchEndY = e.changedTouches[0].clientY;
+                const diff = touchStartY - touchEndY;
+                
+                if (Math.abs(diff) > 50) { // 最小滑动距离
+                    if (diff > 0) { // 向上滑动，显示下一张
+                        if (currentIndex < photoItems.length - 1) {
+                            updateActivePhoto(currentIndex + 1);
+                        }
+                    } else { // 向下滑动，显示上一张
+                        if (currentIndex > 0) {
+                            updateActivePhoto(currentIndex - 1);
+                        }
+                    }
+                }
+                
+                setTimeout(() => {
+                    touchThrottle = false;
+                }, 1000);
+            }, {passive: true});
+            
+            // 优化鼠标滚轮事件处理
+            document.addEventListener('wheel', function(e) {
+                if (wheelThrottle) return;
+                wheelThrottle = true;
+                
+                // 防止默认滚动行为
+                e.preventDefault();
+                
+                if (e.deltaY > 0) {
+                    if (currentIndex < photoItems.length - 1) {
+                        updateActivePhoto(currentIndex + 1);
+                    }
+                } else {
+                    if (currentIndex > 0) {
+                        updateActivePhoto(currentIndex - 1);
+                    }
+                }
+                
+                setTimeout(() => {
+                    wheelThrottle = false;
+                }, 1000);
+            }, {passive: false}); // 注意这里改为passive: false以允许preventDefault
+            
+            // 添加滑动手势支持
+            let startX, startY, endX, endY;
+            let isScrolling = false;
+            
+            document.addEventListener('mousedown', function(e) {
+                startX = e.clientX;
+                startY = e.clientY;
+                isScrolling = true;
+            });
+            
+            document.addEventListener('mouseup', function(e) {
+                if (!isScrolling) return;
+                
+                endX = e.clientX;
+                endY = e.clientY;
+                
+                const diffX = startX - endX;
+                const diffY = startY - endY;
+                
+                // 判断是垂直滑动还是水平滑动
+                if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 50) {
+                    if (diffY > 0) { // 向上滑动
+                        if (currentIndex < photoItems.length - 1) {
+                            updateActivePhoto(currentIndex + 1);
+                        }
+                    } else { // 向下滑动
+                        if (currentIndex > 0) {
+                            updateActivePhoto(currentIndex - 1);
+                        }
+                    }
+                }
+                
+                isScrolling = false;
+            });
+            
+            // 添加滚动指示器点击事件
+            scrollIndicator.addEventListener('click', function() {
+                if (currentIndex < photoItems.length - 1) {
+                    updateActivePhoto(currentIndex + 1);
+                }
+            });
+        });
+    </script>
